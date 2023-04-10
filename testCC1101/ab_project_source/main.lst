@@ -1,0 +1,1474 @@
+$0000: $940C:  L: goto $2EB
+$0001: $02EB:  
+$0002: $940C:  L: goto $25F
+$0003: $025F:  
+$0004: $9518:  L: RETI
+$0005: $0000:  L: NOP
+$0006: $9518:  L: RETI
+$0007: $0000:  L: NOP
+$0008: $9518:  L: RETI
+$0009: $0000:  L: NOP
+$000A: $9518:  L: RETI
+$000B: $0000:  L: NOP
+$000C: $9518:  L: RETI
+$000D: $0000:  L: NOP
+$000E: $9518:  L: RETI
+$000F: $0000:  L: NOP
+$0010: $9518:  L: RETI
+$0011: $0000:  L: NOP
+$0012: $9518:  L: RETI
+$0013: $0000:  L: NOP
+$0014: $9518:  L: RETI
+$0015: $0000:  L: NOP
+$0016: $9518:  L: RETI
+$0017: $0000:  L: NOP
+$0018: $9518:  L: RETI
+$0019: $0000:  L: NOP
+$001A: $9518:  L: RETI
+$001B: $0000:  L: NOP
+$001C: $9518:  L: RETI
+$001D: $0000:  L: NOP
+$001E: $9518:  L: RETI
+$001F: $0000:  L: NOP
+$0020: $940C:  L: goto $70
+$0021: $0070:  
+$0022: $9518:  L: RETI
+$0023: $0000:  L: NOP
+$0024: $940C:  L: goto $C9
+$0025: $00C9:  
+$0026: $940C:  L: goto $121
+$0027: $0121:  
+$0028: $9518:  L: RETI
+$0029: $0000:  L: NOP
+$002A: $9518:  L: RETI
+$002B: $0000:  L: NOP
+$002C: $9518:  L: RETI
+$002D: $0000:  L: NOP
+$002E: $9518:  L: RETI
+$002F: $0000:  L: NOP
+$0030: $9518:  L: RETI
+$0031: $0000:  L: NOP
+$0032: $9518:  L: RETI
+$0033: $0000:  L: NOP
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Wait.alg    ***********
+-----          V: _Wait_ms_
+               F: r16:Word ->  ...
+$0034: $930F:     r16 ->
+$0035: $931F:     r17 ->
+-----          L: 
+               F: (1000*CPU_Clock_Frequency/1000000-(9+8)-2)/4 -> r16:Word  ...
+$0036: $E90B:     $9B -> r16
+$0037: $E01F:     $0F -> r17
+-----          L: 
+               C: if (r16:Word --) then goto $0038 ...
+$0038: $5001:     r16 - $01
+$0039: $4010:     r17 - $00 -
+$003A: $F7E9:     if (Z=0) then goto $38
+$003B: $0000:  F: NOP (NOP)
+-----          L: 
+-----          L: 
+-----          L: 
+$003C: $0000:  F: NOP (NOP)
+-----          L: 
+               F: -> r16:Word  ...
+$003D: $911F:     -> r17
+$003E: $910F:     -> r16
+-----          L: 
+               F: r16:Word ->  ...
+$003F: $930F:     r16 ->
+$0040: $931F:     r17 ->
+-----          L: 
+               F: (1000*CPU_Clock_Frequency/1000000-(4+8)-2)/4 -> r16:Word  ...
+$0041: $E90C:     $9C -> r16
+$0042: $E01F:     $0F -> r17
+-----          L: 
+               C: if (r16:Word --) then goto $0043 ...
+$0043: $5001:     r16 - $01
+$0044: $4010:     r17 - $00 -
+$0045: $F7E9:     if (Z=0) then goto $43
+$0046: $0000:  F: NOP (NOP)
+-----          L: 
+-----          L: 
+-----          L: 
+$0047: $0000:  F: NOP (NOP)
+-----          L: 
+$0048: $0000:  F: NOP (NOP)
+-----          L: 
+               F: -> r16:Word  ...
+$0049: $911F:     -> r17
+$004A: $910F:     -> r16
+               C: if (r16:Word --) then goto $003F ...
+$004B: $5001:     r16 - $01
+$004C: $4010:     r17 - $00 -
+$004D: $F789:     if (Z=0) then goto $3F
+$004E: $0000:  F: NOP (NOP)
+$004F: $9508:  F: RET (ret)
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\PWM.alg    ***********
+-----          V: _PWM_Event_Cyclic_action
+$0050: $932F:  F: r18 -> (Temp ->)
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\main.alp    ***********
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+$0051: $D122:  F: rcall $174 (_STimer_Cyclic_Call)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\PWM.alg    ***********
+-----          L: 
+-----          L: 
+$0052: $912F:  F: -> r18 (-> Temp)
+$0053: $9508:  F: RET (ret)
+-----          V: _PWM_Init
+-----          L: 
+-----          L: 
+$0054: $9A25:  F: 1 -> p$04.5 (1 -> DDR_PWM_0)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+$0055: $E003:  S: $03 -> r16 ($03->r16)
+$0056: $BD04:  S: r16 -> p$24 (r16->TCCR0A)
+$0057: $E00A:  S: $0A -> r16 ($0A->r16)
+$0058: $BD05:  S: r16 -> p$25 (r16->TCCR0B)
+               F: CPU_Clock_Frequency/PWM_FREQUENCY/8/256 -> OCR0A  ...
+$0059: $E40E:     $4E -> r16
+$005A: $BD07:     r16 -> p$27
+-----          L: 
+$005B: $E001:  S: $01 -> r16 ($01->r16)
+$005C: $9300:  S: r16 -> [$006E] (r16->TIMSK0)
+$005D: $006E:  
+               F: 1 -> TOIE0  ...
+$005E: $9100:     [$006E] -> r16
+$005F: $006E:  
+$0060: $6001:     r16 ! $01
+$0061: $9300:     r16 -> [$006E]
+$0062: $006E:  
+-----          L: 
+$0063: $9508:  F: RET (ret)
+-----          V: _PWM_All_Levels_Off
+               F: Z ->  ...
+$0064: $93EF:     r30 ->
+$0065: $93FF:     r31 ->
+$0066: $E000:  F: $00 -> r16 (0 -> r16)
+$0067: $E011:  F: $01 -> r17 (PWM_LINE_NUMB -> r17)
+               F: @PWM_Level -> Z  ...
+$0068: $E0E0:     $00 -> r30
+$0069: $E0F1:     $01 -> r31
+-----          L: 
+$006A: $9301:  F: r16 -> [Z++] (r16 -> [Z++])
+               C: if (r17 --) then goto $006A ...
+$006B: $951A:     r17 --
+$006C: $F7E9:     if (Z=0) then goto $6A
+               F: -> Z  ...
+$006D: $91FF:     -> r31
+$006E: $91EF:     -> r30
+$006F: $9508:  F: RET (ret)
+-----          V: Timer_0_Overflow
+$0070: $930F:  F: r16 -> (r16 ->)
+$0071: $931F:  F: r17 -> (r17 ->)
+               F: SREG ->  ...
+$0072: $B70F:     p$3F -> r16
+$0073: $930F:     r16 ->
+-----          L: 
+-----          L: 
+$0074: $9110:  F: [$0101] -> r17 (PWM_Pos -> r17)
+$0075: $0101:  
+$0076: $9513:  F: r17 ++ (r17 ++)
+$0077: $9310:  F: r17 -> [$0101] (r17 -> PWM_Pos)
+$0078: $0101:  
+               C: if (r17 = 255) then goto $0087 ...
+$0079: $3F1F:     r17 = $FF
+$007A: $F061:     if (Z=1) then goto $87
+-----          L: 
+$007B: $9100:  F: [$0100] -> r16 (PWM_Level[0] -> r16)
+$007C: $0100:  
+$007D: $1710:  F: r17 = r16 (r17 = r16)
+$007E: $F008:  C: if (C=1) then goto $80 (C = 0)
+$007F: $982D:  F: 0 -> p$05.5 (0 -> Port_PWM_0)
+$0080: $F408:  C: if (C=0) then goto $82 (C = 1)
+$0081: $9A2D:  F: 1 -> p$05.5 (1 -> Port_PWM_0)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+               F: -> SREG  ...
+$0082: $910F:     -> r16
+$0083: $BF0F:     r16 -> p$3F
+$0084: $911F:  F: -> r17 (-> r17)
+$0085: $910F:  F: -> r16 (-> r16)
+$0086: $9518:  F: RETI (reti)
+-----          V: 
+$0087: $DFC8:  F: rcall $50 (_PWM_Event_Cyclic_action)
+-----          L: 
+$0088: $CFF9:  J: goto $82 (RJMP)
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\RND.alg    ***********
+-----          V: _RND_Next
+$0089: $9100:  F: [$0104] -> r16 (RND -> r16)
+$008A: $0104:  
+$008B: $0F00:  F: << r16 (<<r16)
+$008C: $F02B:  C: if (V=1) then goto $92 (V=1)
+$008D: $F00D:  C: if (H=1) then goto $8F (H=1)
+-----          L: 
+$008E: $9503:  F: r16 ++ (r16++)
+-----          L: 
+$008F: $9300:  F: r16 -> [$0104] (r16 -> RND)
+$0090: $0104:  
+$0091: $9508:  F: RET (ret)
+-----          V: 
+$0092: $F3DD:  C: if (H=1) then goto $8E (H=1)
+$0093: $CFFB:  J: goto $8F (RJMP)
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\UART.alg    ***********
+-----          V: _UART_Event_Transmit_Buffer_Empty
+-----          L: 
+-----          L: 
+$0094: $9508:  F: RET (ret)
+-----          V: _UART_Event_Received_string
+-----          L: 
+-----          L: 
+$0095: $9508:  F: RET (ret)
+-----          V: _UART_Event_Transmit_Buffer_Overflow
+$0096: $9478:  F: 1 -> I (1 -> I)
+-----          L: 
+-----          L: 
+               C: if (Z = UART_Transmit_OUT_Buffer_Pointer) then goto $0097 ...
+$0097: $9110:     [$014C] -> r17
+$0098: $014C:  
+$0099: $17E1:     r30 = r17
+$009A: $9110:     [$014D] -> r17
+$009B: $014D:  
+$009C: $07F1:     r31 = r17=
+$009D: $F3C9:     if (Z=1) then goto $97
+-----          L: 
+-----          L: 
+$009E: $9508:  F: RET (ret)
+-----          V: _UART_Event_Received_byte
+-----          L: 
+-----          L: 
+-----          L: 
+$009F: $9508:  F: RET (ret)
+-----          V: to_UART
+-----          L: 
+               C: if (UDRE0 = 0) then goto $00A0 ...
+$00A0: $9100:     [$00C0] -> r16
+$00A1: $00C0:  
+$00A2: $FF05:     if (r16.5=1 then SKIP
+$00A3: $CFFC:     goto $A0 (RJMP)
+-----          L: 
+$00A4: $9310:  F: r17 -> [$00C6] (r17 -> UDR0)
+$00A5: $00C6:  
+$00A6: $9508:  F: RET (ret)
+-----          V: _UART_Init
+-----          L: 
+$00A7: $E000:  S: $00 -> r16 ($00->r16)
+$00A8: $9300:  S: r16 -> [$00C5] (r16->UBRR0H)
+$00A9: $00C5:  
+$00AA: $E607:  S: $67 -> r16 ($67->r16)
+$00AB: $9300:  S: r16 -> [$00C4] (r16->UBRR0L)
+$00AC: $00C4:  
+$00AD: $E006:  S: $06 -> r16 ($06->r16)
+$00AE: $9300:  S: r16 -> [$00C2] (r16->UCSR0C)
+$00AF: $00C2:  
+$00B0: $E000:  S: $00 -> r16 ($00->r16)
+$00B1: $9300:  S: r16 -> [$00C0] (r16->UCSR0A)
+$00B2: $00C0:  
+$00B3: $E908:  S: $98 -> r16 ($98->r16)
+$00B4: $9300:  S: r16 -> [$00C1] (r16->UCSR0B)
+$00B5: $00C1:  
+-----          L: 
+               F: @UART_Receive_Buffer -> UART_Receive_Buffer_Pointer  ...
+$00B6: $E007:     $07 -> r16
+$00B7: $9300:     r16 -> [$0128]
+$00B8: $0128:  
+$00B9: $E001:     $01 -> r16
+$00BA: $9300:     r16 -> [$0129]
+$00BB: $0129:  
+               F: @UART_Transmit_Buffer -> UART_Transmit_IN_Buffer_Pointer  ...
+$00BC: $E20A:     $2A -> r16
+$00BD: $9300:     r16 -> [$014A]
+$00BE: $014A:  
+$00BF: $E001:     $01 -> r16
+$00C0: $9300:     r16 -> [$014B]
+$00C1: $014B:  
+               F: @UART_Transmit_Buffer -> UART_Transmit_OUT_Buffer_Pointer  ...
+$00C2: $E20A:     $2A -> r16
+$00C3: $9300:     r16 -> [$014C]
+$00C4: $014C:  
+$00C5: $E001:     $01 -> r16
+$00C6: $9300:     r16 -> [$014D]
+$00C7: $014D:  
+-----          L: 
+$00C8: $9508:  F: RET (ret)
+-----          V: USART0_Receive_Complete
+$00C9: $930F:  F: r16 -> (r16 ->)
+$00CA: $931F:  F: r17 -> (r17 ->)
+               F: SREG ->  ...
+$00CB: $B70F:     p$3F -> r16
+$00CC: $930F:     r16 ->
+-----          L: 
+$00CD: $9100:  F: [$00C6] -> r16 (UDR0 -> r16)
+$00CE: $00C6:  
+-----          L: 
+$00CF: $DFCF:  F: rcall $9F (_UART_Event_Received_byte)
+-----          L: 
+$00D0: $D005:  F: rcall $D6 (_UART_Fill_Receive_Buffer)
+-----          L: 
+               F: -> SREG  ...
+$00D1: $910F:     -> r16
+$00D2: $BF0F:     r16 -> p$3F
+$00D3: $911F:  F: -> r17 (-> r17)
+$00D4: $910F:  F: -> r16 (-> r16)
+$00D5: $9518:  F: RETI (reti)
+-----          V: _UART_Fill_Receive_Buffer
+               F: Z ->  ...
+$00D6: $93EF:     r30 ->
+$00D7: $93FF:     r31 ->
+               F: UART_Receive_Buffer_Pointer -> Z  ...
+$00D8: $91E0:     [$0128] -> r30
+$00D9: $0128:  
+$00DA: $91F0:     [$0129] -> r31
+$00DB: $0129:  
+               C: if (r16 = LF) then goto $00EA ...
+$00DC: $300A:     r16 = $0A
+$00DD: $F061:     if (Z=1) then goto $EA
+               C: if (r16 = CR) then goto $00E5 ...
+$00DE: $300D:     r16 = $0D
+$00DF: $F029:     if (Z=1) then goto $E5
+$00E0: $9301:  F: r16 -> [Z++] (r16 -> [Z++])
+               C: if (Z < @UART_Receive_Buffer + UART_SIZE_IN_BUFFER) then goto $00EA ...
+$00E1: $32E7:     r30 = $27
+$00E2: $E011:     $01 -> r17
+$00E3: $07F1:     r31 = r17=
+$00E4: $F028:     if ( < ) then goto $EA
+-----          L: 
+               F: EOS -> [Z]  ...
+$00E5: $E000:     $00 -> r16
+$00E6: $8300:     r16 -> [Z+$00]
+-----          L: 
+$00E7: $DFAD:  F: rcall $95 (_UART_Event_Received_string)
+-----          L: 
+               F: @UART_Receive_Buffer -> Z  ...
+$00E8: $E0E7:     $07 -> r30
+$00E9: $E0F1:     $01 -> r31
+-----          L: 
+-----          L: 
+               F: Z -> UART_Receive_Buffer_Pointer  ...
+$00EA: $93E0:     r30 -> [$0128]
+$00EB: $0128:  
+$00EC: $93F0:     r31 -> [$0129]
+$00ED: $0129:  
+               F: -> Z  ...
+$00EE: $91FF:     -> r31
+$00EF: $91EF:     -> r30
+-----          L: 
+$00F0: $9508:  F: RET (ret)
+-----          V: _UART_PUSH_r16
+-----          L: 
+$00F1: $F40F:  C: if (I=0) then goto $F3 (I = 1)
+$00F2: $9468:  F: 1 -> T (1 -> T)
+$00F3: $F00F:  C: if (I=1) then goto $F5 (I = 0)
+$00F4: $94E8:  F: 0 -> T (0 -> T)
+$00F5: $94F8:  F: 0 -> I (0 -> I)
+-----          L: 
+$00F6: $930F:  F: r16 -> (r16 ->)
+               F: Z ->  ...
+$00F7: $93EF:     r30 ->
+$00F8: $93FF:     r31 ->
+               F: UART_Transmit_IN_Buffer_Pointer -> Z  ...
+$00F9: $91E0:     [$014A] -> r30
+$00FA: $014A:  
+$00FB: $91F0:     [$014B] -> r31
+$00FC: $014B:  
+-----          L: 
+$00FD: $9631:  F: r30,r31 + $01 (Z + 1)
+               C: if (Z >= @UART_Transmit_Buffer + UART_SIZE_OUT_BUFFER) then goto $0104 ...
+$00FE: $34EA:     r30 = $4A
+$00FF: $E011:     $01 -> r17
+$0100: $07F1:     r31 = r17=
+$0101: $F010:     if ( < ) then goto $104
+               F: @UART_Transmit_Buffer -> Z  ...
+$0102: $E2EA:     $2A -> r30
+$0103: $E0F1:     $01 -> r31
+-----          L: 
+               C: if (Z -= UART_Transmit_OUT_Buffer_Pointer) then goto $010C ...
+$0104: $9110:     [$014C] -> r17
+$0105: $014C:  
+$0106: $17E1:     r30 = r17
+$0107: $9110:     [$014D] -> r17
+$0108: $014D:  
+$0109: $07F1:     r31 = r17=
+$010A: $F409:     if (Z=0) then goto $10C
+$010B: $DF8A:  F: rcall $96 (_UART_Event_Transmit_Buffer_Overflow)
+-----          L: 
+-----          L: 
+$010C: $8300:  F: r16 -> [Z] (r16 -> [Z])
+               F: Z -> UART_Transmit_IN_Buffer_Pointer  ...
+$010D: $93E0:     r30 -> [$014A]
+$010E: $014A:  
+$010F: $93F0:     r31 -> [$014B]
+$0110: $014B:  
+-----          L: 
+               C: if (UDRIE0 = 1) then goto $011B ...
+$0111: $9100:     [$00C1] -> r16
+$0112: $00C1:  
+$0113: $FD05:     if (r16.5=0 then SKIP
+$0114: $C006:     goto $11B (RJMP)
+               F: 1 -> UDRIE0  ...
+$0115: $9100:     [$00C1] -> r16
+$0116: $00C1:  
+$0117: $6200:     r16 ! $20
+$0118: $9300:     r16 -> [$00C1]
+$0119: $00C1:  
+$011A: $D010:  F: rcall $12B (_UART_POP_and_Send_Byte)
+-----          L: 
+               F: -> Z  ...
+$011B: $91FF:     -> r31
+$011C: $91EF:     -> r30
+$011D: $910F:  F: -> r16 (-> r16)
+-----          L: 
+$011E: $F40E:  C: if (T=0) then goto $120 (T = 1)
+$011F: $9478:  F: 1 -> I (1 -> I)
+-----          L: 
+$0120: $9508:  F: RET (ret)
+-----          V: USART0_DR_Empty
+$0121: $930F:  F: r16 -> (r16 ->)
+$0122: $931F:  F: r17 -> (r17 ->)
+               F: SREG ->  ...
+$0123: $B70F:     p$3F -> r16
+$0124: $930F:     r16 ->
+$0125: $D005:  F: rcall $12B (_UART_POP_and_Send_Byte)
+               F: -> SREG  ...
+$0126: $910F:     -> r16
+$0127: $BF0F:     r16 -> p$3F
+$0128: $911F:  F: -> r17 (-> r17)
+$0129: $910F:  F: -> r16 (-> r16)
+$012A: $9518:  F: RETI (reti)
+-----          V: _UART_POP_and_Send_Byte
+               F: Z ->  ...
+$012B: $93EF:     r30 ->
+$012C: $93FF:     r31 ->
+               F: UART_Transmit_OUT_Buffer_Pointer -> Z  ...
+$012D: $91E0:     [$014C] -> r30
+$012E: $014C:  
+$012F: $91F0:     [$014D] -> r31
+$0130: $014D:  
+               C: if (Z = UART_Transmit_IN_Buffer_Pointer) then goto $0149 ...
+$0131: $9110:     [$014A] -> r17
+$0132: $014A:  
+$0133: $17E1:     r30 = r17
+$0134: $9110:     [$014B] -> r17
+$0135: $014B:  
+$0136: $07F1:     r31 = r17=
+$0137: $F089:     if (Z=1) then goto $149
+$0138: $9631:  F: r30,r31 + $01 (Z + 1)
+               C: if (Z >= @UART_Transmit_Buffer + UART_SIZE_OUT_BUFFER) then goto $013F ...
+$0139: $34EA:     r30 = $4A
+$013A: $E011:     $01 -> r17
+$013B: $07F1:     r31 = r17=
+$013C: $F010:     if ( < ) then goto $13F
+               F: @UART_Transmit_Buffer -> Z  ...
+$013D: $E2EA:     $2A -> r30
+$013E: $E0F1:     $01 -> r31
+               F: [Z] -> UDR0  ...
+$013F: $8100:     [Z+$00] -> r16
+$0140: $9300:     r16 -> [$00C6]
+$0141: $00C6:  
+               F: Z -> UART_Transmit_OUT_Buffer_Pointer  ...
+$0142: $93E0:     r30 -> [$014C]
+$0143: $014C:  
+$0144: $93F0:     r31 -> [$014D]
+$0145: $014D:  
+               F: -> Z  ...
+$0146: $91FF:     -> r31
+$0147: $91EF:     -> r30
+$0148: $9508:  F: RET (ret)
+-----          L: 
+               F: 0 -> UDRIE0  ...
+$0149: $9100:     [$00C1] -> r16
+$014A: $00C1:  
+$014B: $7D0F:     r16 & $DF
+$014C: $9300:     r16 -> [$00C1]
+$014D: $00C1:  
+$014E: $DF45:  F: rcall $94 (_UART_Event_Transmit_Buffer_Empty)
+               F: -> Z  ...
+$014F: $91FF:     -> r31
+$0150: $91EF:     -> r30
+-----          L: 
+$0151: $9508:  F: RET (ret)
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\STimer.alg    ***********
+-----          V: _STimer_Event_End_1
+-----          L: 
+               F: LOW -> [@PWM_Level + LED]  ...
+$0152: $E000:     $00 -> r16
+$0153: $9300:     r16 -> [$0100]
+$0154: $0100:  
+-----          L: 
+$0155: $9508:  F: RET (ret)
+-----          V: _STimer_Event_End_0
+-----          L: 
+$0156: $D09C:  F: rcall $1F3 (_ccRadio_writePac)
+$0157: $E305:  F: $35 -> r16 (STX -> r16)
+$0158: $D137:  F: rcall $290 (_ccRadio_strobe_)
+-----          L: 
+               F: HIGH -> [@PWM_Level + LED]  ...
+$0159: $EF0F:     $FF -> r16
+$015A: $9300:     r16 -> [$0100]
+$015B: $0100:  
+-----          L: 
+               F: 50/STIMER_PERIOD_CALL -> [@STimer_Counter + DO_LED_OFF]  ...
+$015C: $E005:     $05 -> r16
+$015D: $9300:     r16 -> [$014F]
+$015E: $014F:  
+               F: 50/STIMER_PERIOD_CALL -> [@STimer_Counter_Stop + DO_LED_OFF]  ...
+$015F: $9300:     r16 -> [$0151]
+$0160: $0151:  
+-----          L: 
+               F: [@STimer_Counter_Stop + DO_LED_SENT] -> [@STimer_Counter + DO_LED_SENT]  ...
+$0161: $9100:     [$0150] -> r16
+$0162: $0150:  
+$0163: $9300:     r16 -> [$014E]
+$0164: $014E:  
+-----          L: 
+$0165: $9508:  F: RET (ret)
+-----          V: _STimer_Event_End_2
+-----          L: 
+-----          L: 
+$0166: $9508:  F: RET (ret)
+-----          V: _STimer_Clear_All
+               F: Z ->  ...
+$0167: $93EF:     r30 ->
+$0168: $93FF:     r31 ->
+               F: @STimer_Counter -> Z  ...
+$0169: $E4EE:     $4E -> r30
+$016A: $E0F1:     $01 -> r31
+$016B: $E022:  F: $02 -> r18 (STIMER_NUMB -> Temp)
+$016C: $E000:  F: $00 -> r16 (0 -> r16)
+-----          L: 
+$016D: $9301:  F: r16 -> [Z++] (r16 -> [Z++])
+               C: if (Temp --) then goto $016D ...
+$016E: $952A:     r18 --
+$016F: $F7E9:     if (Z=0) then goto $16D
+               F: -> Z  ...
+$0170: $91FF:     -> r31
+$0171: $91EF:     -> r30
+$0172: $9508:  F: RET (ret)
+-----          V: _STimer_Init
+-----          L: 
+$0173: $9508:  F: RET (ret)
+-----          V: _STimer_Cyclic_Call
+$0174: $9100:  F: [$014E] -> r16 (STimer_Counter[0]  -> r16)
+$0175: $014E:  
+$0176: $5001:  F: r16 - $01 (r16 - 1)
+$0177: $F020:  C: if (C=1) then goto $17C (C = 1)
+$0178: $9300:  F: r16 -> [$014E] (r16 -> STimer_Counter[0])
+$0179: $014E:  
+$017A: $F409:  C: if (Z=0) then goto $17C (-=)
+$017B: $DFDA:  F: rcall $156 (_STimer_Event_End_0)
+-----          L: 
+$017C: $9100:  F: [$014F] -> r16 (STimer_Counter[1]  -> r16)
+$017D: $014F:  
+$017E: $5001:  F: r16 - $01 (r16 - 1)
+$017F: $F020:  C: if (C=1) then goto $184 (C = 1)
+$0180: $9300:  F: r16 -> [$014F] (r16 -> STimer_Counter[1])
+$0181: $014F:  
+$0182: $F409:  C: if (Z=0) then goto $184 (-=)
+$0183: $DFCE:  F: rcall $152 (_STimer_Event_End_1)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+$0184: $9508:  F: RET (ret)
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Print.alg    ***********
+-----          V: _print_string_l_
+               F: << Z  ...
+$0185: $0FEE:     << r30
+$0186: $1FFF:     << r31 <
+-----          L: 
+$0187: $9105:  F: LPM[Z++] -> r16 (LPM[Z++] -> r16)
+               C: if (r16 = EOS) then goto $018B ...
+$0188: $3000:     r16 = $00
+$0189: $F409:     if (Z=0) then goto $18B
+$018A: $9508:  F: RET (ret)
+$018B: $DF65:  F: rcall $F1 (_UART_PUSH_r16)
+$018C: $CFFA:  J: goto $187 (RJMP)
+-----          L: 
+$018D: $9508:  F: RET (ret)
+-----          V: _print_string_
+               F: Z -> PRINT_Z_temp  ...
+$018E: $93E0:     r30 -> [$0152]
+$018F: $0152:  
+$0190: $93F0:     r31 -> [$0153]
+$0191: $0153:  
+               F: -> Z  ...
+$0192: $91FF:     -> r31
+$0193: $91EF:     -> r30
+               F: << Z  ...
+$0194: $0FEE:     << r30
+$0195: $1FFF:     << r31 <
+-----          L: 
+$0196: $9105:  F: LPM[Z++] -> r16 (LPM[Z++] -> r16)
+               C: if (r16 = EOS) then goto $019B ...
+$0197: $3000:     r16 = $00
+$0198: $F011:     if (Z=1) then goto $19B
+$0199: $DF57:  F: rcall $F1 (_UART_PUSH_r16)
+$019A: $CFFB:  J: goto $196 (RJMP)
+-----          L: 
+$019B: $9631:  F: r30,r31 + $01 (Z + 1)
+               F: Z >>  ...
+$019C: $95F6:     r31 >>
+$019D: $95E7:     > r30 >>
+               F: Z ->  ...
+$019E: $93EF:     r30 ->
+$019F: $93FF:     r31 ->
+               F: PRINT_Z_temp -> Z  ...
+$01A0: $91E0:     [$0152] -> r30
+$01A1: $0152:  
+$01A2: $91F0:     [$0153] -> r31
+$01A3: $0153:  
+-----          L: 
+$01A4: $9508:  F: RET (ret)
+-----          V: _print_string_v_
+-----          L: 
+$01A5: $9101:  F: [Z++] -> r16 ([Z++] -> r16)
+               C: if (r16 = EOS) then goto $01A9 ...
+$01A6: $3000:     r16 = $00
+$01A7: $F409:     if (Z=0) then goto $1A9
+$01A8: $9508:  F: RET (ret)
+$01A9: $DF47:  F: rcall $F1 (_UART_PUSH_r16)
+$01AA: $CFFA:  J: goto $1A5 (RJMP)
+-----          L: 
+$01AB: $9508:  F: RET (ret)
+-----          V: _print_HEX_
+$01AC: $2F0F:  F: r31 -> r16 (ZH -> r16)
+$01AD: $9502:  F: >> r16 << (>>r16<<)
+$01AE: $D03B:  F: rcall $1EA (_Print_HEX_Char)
+-----          L: 
+$01AF: $2F0F:  F: r31 -> r16 (ZH -> r16)
+$01B0: $D039:  F: rcall $1EA (_Print_HEX_Char)
+-----          L: 
+$01B1: $2F0E:  F: r30 -> r16 (ZL -> r16)
+$01B2: $9502:  F: >> r16 << (>>r16<<)
+$01B3: $D036:  F: rcall $1EA (_Print_HEX_Char)
+-----          L: 
+$01B4: $2F0E:  F: r30 -> r16 (ZL -> r16)
+$01B5: $D034:  F: rcall $1EA (_Print_HEX_Char)
+-----          L: 
+$01B6: $9508:  F: RET (ret)
+-----          L: 
+-----          V: _print_DEC_
+-----          L: 
+               F: "0" -> PRINT_Dec0_Flag  ...
+$01B7: $E300:     $30 -> r16
+$01B8: $9300:     r16 -> [$0154]
+$01B9: $0154:  
+-----          L: 
+               F: 10000 -> r17:Word  ...
+$01BA: $E110:     $10 -> r17
+$01BB: $E227:     $27 -> r18
+$01BC: $D019:  F: rcall $1D6 (_Print_DEC_Char)
+-----          L: 
+               F: 1000 -> r17:Word  ...
+$01BD: $EE18:     $E8 -> r17
+$01BE: $E023:     $03 -> r18
+$01BF: $D016:  F: rcall $1D6 (_Print_DEC_Char)
+-----          L: 
+               F: 100 -> r17:Word  ...
+$01C0: $E614:     $64 -> r17
+$01C1: $E020:     $00 -> r18
+$01C2: $D013:  F: rcall $1D6 (_Print_DEC_Char)
+-----          L: 
+               F: 10 -> r17:Word  ...
+$01C3: $E01A:     $0A -> r17
+$01C4: $E020:     $00 -> r18
+$01C5: $D010:  F: rcall $1D6 (_Print_DEC_Char)
+-----          L: 
+$01C6: $E300:  F: $30 -> r16 ("0" -> r16)
+$01C7: $0F0E:  F: r16 + r30 (r16 + ZL)
+$01C8: $DF28:  F: rcall $F1 (_UART_PUSH_r16)
+$01C9: $9508:  F: RET (ret)
+-----          L: 
+-----          V: _print_BIT_
+-----          L: 
+               F: << Z  ...
+$01CA: $0FEE:     << r30
+$01CB: $1FFF:     << r31 <
+$01CC: $F008:  C: if (C=1) then goto $1CE (C = 0)
+$01CD: $E300:  F: $30 -> r16 (PRINT_BIT_ZERO_CHAR -> r16)
+$01CE: $F408:  C: if (C=0) then goto $1D0 (C = 1)
+$01CF: $E301:  F: $31 -> r16 (PRINT_BIT_ONE_CHAR -> r16)
+$01D0: $931F:  F: r17 -> (r17 ->)
+$01D1: $DF1F:  F: rcall $F1 (_UART_PUSH_r16)
+$01D2: $911F:  F: -> r17 (-> r17)
+               C: if (r17 --) then goto $01CA ...
+$01D3: $951A:     r17 --
+$01D4: $F7A9:     if (Z=0) then goto $1CA
+$01D5: $9508:  F: RET (ret)
+-----          L: 
+-----          V: _Print_DEC_Char
+$01D6: $E300:  F: $30 -> r16 ("0" -> r16)
+-----          L: 
+               C: if (Z < r17:Word) then goto $01DE ...
+$01D7: $17E1:     r30 = r17
+$01D8: $07F2:     r31 = r18=
+$01D9: $F020:     if ( < ) then goto $1DE
+               F: Z - r17:Word  ...
+$01DA: $1BE1:     r30 - r17
+$01DB: $0BF2:     r31 - r18 -
+$01DC: $9503:  F: r16 ++ (r16 ++)
+$01DD: $CFF9:  J: goto $1D7 (RJMP)
+-----          L: 
+-----          L: 
+               C: if (r16 -= "0") then goto $01E6 ...
+$01DE: $3300:     r16 = $30
+$01DF: $F431:     if (Z=0) then goto $1E6
+$01E0: $9110:  F: [$0154] -> r17 (PRINT_Dec0_Flag -> r17)
+$01E1: $0154:  
+               C: if (r17 -= "0") then goto $01E8 ...
+$01E2: $3310:     r17 = $30
+$01E3: $F421:     if (Z=0) then goto $1E8
+$01E4: $9508:  F: RET (ret)
+-----          L: 
+-----          L: 
+$01E5: $C002:  J: goto $1E8 (RJMP)
+-----          L: 
+$01E6: $9300:  F: r16 -> [$0154] (r16 -> PRINT_Dec0_Flag)
+$01E7: $0154:  
+-----          L: 
+$01E8: $DF08:  F: rcall $F1 (_UART_PUSH_r16)
+$01E9: $9508:  F: RET (ret)
+-----          L: 
+-----          V: _Print_HEX_Char
+$01EA: $700F:  F: r16 & $0F (r16 & #b00001111)
+               C: if (r16 < 10) then goto $01EE ...
+$01EB: $300A:     r16 = $0A
+$01EC: $F408:     if ( >= ) then goto $1EE
+$01ED: $5D00:  F: r16 - $D0 (r16 + "0")
+               C: if (r16 < 16) then goto $01F1 ...
+$01EE: $3100:     r16 = $10
+$01EF: $F408:     if ( >= ) then goto $1F1
+$01F0: $5C09:  F: r16 - $C9 (r16 + "A"-10)
+$01F1: $DEFF:  F: rcall $F1 (_UART_PUSH_r16)
+$01F2: $9508:  F: RET (ret)
+-----          L: 
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\ccRadio.alg    ***********
+-----          V: _ccRadio_writePac
+-----          L: 
+$01F3: $931F:  F: r17 -> (r17 ->)
+               F: Z ->  ...
+$01F4: $93EF:     r30 ->
+$01F5: $93FF:     r31 ->
+$01F6: $982A:  F: 0 -> p$05.2 (0 -> ccRadio_CSn)
+-----          L: 
+$01F7: $991B:  C: if (p$03.3=0 then SKIP (ccRadio_SO = 1)
+$01F8: $CFFE:  C: goto $1F7 (RJMP) (ccRadio_SO = 1)
+-----          L: 
+$01F9: $E70F:  F: $7F -> r16 ($7F -> r16)
+$01FA: $D0DC:  F: rcall $2D7 (_ccRadio_writeByte_)
+-----          L: 
+               F: @ccRadio_pacTx -> Z  ...
+$01FB: $E5E5:     $55 -> r30
+$01FC: $E0F1:     $01 -> r31
+$01FD: $E110:  F: $10 -> r17 (CCRADIO_PACSIZE -> r17)
+-----          L: 
+$01FE: $9101:  F: [Z++] -> r16 ([Z++] -> r16)
+$01FF: $D0D7:  F: rcall $2D7 (_ccRadio_writeByte_)
+               C: if (r17--) then goto $01FE ...
+$0200: $951A:     r17 --
+$0201: $F7E1:     if (Z=0) then goto $1FE
+-----          L: 
+$0202: $9A2A:  F: 1 -> p$05.2 (1 -> ccRadio_CSn)
+               F: -> Z  ...
+$0203: $91FF:     -> r31
+$0204: $91EF:     -> r30
+$0205: $911F:  F: -> r17 (-> r17)
+$0206: $9508:  F: RET (ret)
+-----          V: _ccRadio_readPac
+-----          L: 
+$0207: $931F:  F: r17 -> (r17 ->)
+               F: Z ->  ...
+$0208: $93EF:     r30 ->
+$0209: $93FF:     r31 ->
+$020A: $982A:  F: 0 -> p$05.2 (0 -> ccRadio_CSn)
+-----          L: 
+$020B: $991B:  C: if (p$03.3=0 then SKIP (ccRadio_SO = 1)
+$020C: $CFFE:  C: goto $20B (RJMP) (ccRadio_SO = 1)
+-----          L: 
+$020D: $EF0F:  F: $FF -> r16 ($FF -> r16)
+$020E: $D0C8:  F: rcall $2D7 (_ccRadio_writeByte_)
+-----          L: 
+               F: @ccRadio_pacRx -> Z  ...
+$020F: $E6E5:     $65 -> r30
+$0210: $E0F1:     $01 -> r31
+$0211: $E110:  F: $10 -> r17 (CCRADIO_PACSIZE -> r17)
+-----          L: 
+$0212: $E30D:  F: $3D -> r16 (SNOP -> r16)
+$0213: $D0C3:  F: rcall $2D7 (_ccRadio_writeByte_)
+               F: ccRadio_Status -> [Z++]  ...
+$0214: $9100:     [$0175] -> r16
+$0215: $0175:  
+$0216: $9301:     r16 -> [Z++]
+               C: if (r17--) then goto $0212 ...
+$0217: $951A:     r17 --
+$0218: $F7C9:     if (Z=0) then goto $212
+-----          L: 
+$0219: $E30D:  F: $3D -> r16 (SNOP -> r16)
+$021A: $D0BC:  F: rcall $2D7 (_ccRadio_writeByte_)
+$021B: $9100:  F: [$0175] -> r16 (ccRadio_Status -> r16)
+$021C: $0175:  
+$021D: $5800:  F: r16 - $80 (r16 + 128)
+$021E: $9300:  F: r16 -> [$0176] (r16 -> ccRadio_RSSI)
+$021F: $0176:  
+$0220: $E30D:  F: $3D -> r16 (SNOP -> r16)
+$0221: $D0B5:  F: rcall $2D7 (_ccRadio_writeByte_)
+               F: ccRadio_Status -> ccRadio_LQI  ...
+$0222: $9100:     [$0175] -> r16
+$0223: $0175:  
+$0224: $9300:     r16 -> [$0177]
+$0225: $0177:  
+-----          L: 
+-----          L: 
+$0226: $9A2A:  F: 1 -> p$05.2 (1 -> ccRadio_CSn)
+               F: -> Z  ...
+$0227: $91FF:     -> r31
+$0228: $91EF:     -> r30
+$0229: $911F:  F: -> r17 (-> r17)
+$022A: $9508:  F: RET (ret)
+-----          V: _ccRadio_init
+-----          L: 
+$022B: $9A22:  F: 1 -> p$04.2 (1 -> ccRadio_DDR_CSN)
+$022C: $9A2A:  F: 1 -> p$05.2 (1 -> ccRadio_CSn)
+$022D: $9A24:  F: 1 -> p$04.4 (1 -> ccRadio_DDR_SI)
+$022E: $9A21:  F: 1 -> p$04.1 (1 -> ccRadio_DDR_SCLK)
+-----          L: 
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Wait.alg    ***********
+-----          L: 
+               F: (5*CPU_Clock_Frequency/1000000-2)/4 -> r16:Word  ...
+$022F: $E103:     $13 -> r16
+$0230: $E010:     $00 -> r17
+-----          L: 
+               C: if (r16:Word --) then goto $0231 ...
+$0231: $5001:     r16 - $01
+$0232: $4010:     r17 - $00 -
+$0233: $F7E9:     if (Z=0) then goto $231
+$0234: $0000:  F: NOP (NOP)
+-----          L: 
+-----          L: 
+-----          L: 
+$0235: $0000:  F: NOP (NOP)
+-----          L: 
+$0236: $0000:  F: NOP (NOP)
+-----          L: 
+$0237: $982A:  F: 0 -> p$05.2 (0 -> ccRadio_CSn)
+-----          L: 
+               F: (10*CPU_Clock_Frequency/1000000-2)/4 -> r16:Word  ...
+$0238: $E207:     $27 -> r16
+$0239: $E010:     $00 -> r17
+-----          L: 
+               C: if (r16:Word --) then goto $023A ...
+$023A: $5001:     r16 - $01
+$023B: $4010:     r17 - $00 -
+$023C: $F7E9:     if (Z=0) then goto $23A
+$023D: $0000:  F: NOP (NOP)
+-----          L: 
+-----          L: 
+-----          L: 
+$023E: $0000:  F: NOP (NOP)
+-----          L: 
+$023F: $0000:  F: NOP (NOP)
+-----          L: 
+$0240: $9A2A:  F: 1 -> p$05.2 (1 -> ccRadio_CSn)
+-----          L: 
+               F: (41*CPU_Clock_Frequency/1000000-2)/4 -> r16:Word  ...
+$0241: $EA03:     $A3 -> r16
+$0242: $E010:     $00 -> r17
+-----          L: 
+               C: if (r16:Word --) then goto $0243 ...
+$0243: $5001:     r16 - $01
+$0244: $4010:     r17 - $00 -
+$0245: $F7E9:     if (Z=0) then goto $243
+$0246: $0000:  F: NOP (NOP)
+-----          L: 
+-----          L: 
+-----          L: 
+$0247: $0000:  F: NOP (NOP)
+-----          L: 
+$0248: $0000:  F: NOP (NOP)
+-----          L: 
+$0249: $982A:  F: 0 -> p$05.2 (0 -> ccRadio_CSn)
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\ccRadio.alg    ***********
+-----          L: 
+$024A: $991B:  C: if (p$03.3=0 then SKIP (ccRadio_SO = 1)
+$024B: $CFFE:  C: goto $24A (RJMP) (ccRadio_SO = 1)
+$024C: $E300:  F: $30 -> r16 (SRES -> r16)
+$024D: $D042:  F: rcall $290 (_ccRadio_strobe_)
+-----          L: 
+$024E: $991B:  C: if (p$03.3=0 then SKIP (ccRadio_SO = 1)
+$024F: $CFFE:  C: goto $24E (RJMP) (ccRadio_SO = 1)
+$0250: $9A2A:  F: 1 -> p$05.2 (1 -> ccRadio_CSn)
+-----          L: 
+$0251: $D029:  F: rcall $27B (_ccRadio_setDefault)
+-----          L: 
+$0252: $E30E:  F: $3E -> r16 ($3E -> r16)
+$0253: $730F:  F: r16 & $3F (r16 & #b00111111)
+$0254: $EC10:  F: $C0 -> r17 ($C0 -> r17)
+$0255: $D079:  F: rcall $2CF (_ccRadio_write_)
+-----          L: 
+$0256: $E003:  S: $03 -> r16 ($03->r16)
+$0257: $9300:  S: r16 -> [$0069] (r16->EICRA)
+$0258: $0069:  
+$0259: $E001:  S: $01 -> r16 ($01->r16)
+$025A: $BB0C:  S: r16 -> p$1C (r16->EIFR)
+$025B: $BB0D:  S: r16 -> p$1D (r16->EIMSK)
+-----          L: 
+$025C: $E304:  F: $34 -> r16 (SRX -> r16)
+$025D: $D032:  F: rcall $290 (_ccRadio_strobe_)
+$025E: $9508:  F: RET (ret)
+-----          V: External_0
+$025F: $930F:  F: r16 -> (r16 ->)
+$0260: $931F:  F: r17 -> (r17 ->)
+               F: SREG ->  ...
+$0261: $B70F:     p$3F -> r16
+$0262: $930F:     r16 ->
+-----          L: 
+-----          L: 
+$0263: $DFA3:  F: rcall $207 (_ccRadio_readPac)
+-----          L: 
+               F: Z ->  ...
+$0264: $93EF:     r30 ->
+$0265: $93FF:     r31 ->
+               F: ccRadio_RSSI -> Z  ...
+$0266: $91E0:     [$0176] -> r30
+$0267: $0176:  
+$0268: $E0F0:     $00 -> r31
+$0269: $DF4D:  F: rcall $1B7 (_print_DEC_)
+               F: -> Z  ...
+$026A: $91FF:     -> r31
+$026B: $91EF:     -> r30
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Print.alg    ***********
+-----          L: 
+$026C: $DF21:  F: rcall $18E (_print_string_)
+$026D: $0D $00
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\ccRadio.alg    ***********
+-----          L: 
+               F: HIGH -> [@PWM_Level + LED]  ...
+$026E: $EF0F:     $FF -> r16
+$026F: $9300:     r16 -> [$0100]
+$0270: $0100:  
+-----          L: 
+               F: 200/STIMER_PERIOD_CALL -> [@STimer_Counter + DO_LED_OFF]  ...
+$0271: $E104:     $14 -> r16
+$0272: $9300:     r16 -> [$014F]
+$0273: $014F:  
+               F: 200/STIMER_PERIOD_CALL -> [@STimer_Counter_Stop + DO_LED_OFF]  ...
+$0274: $9300:     r16 -> [$0151]
+$0275: $0151:  
+-----          L: 
+               F: -> SREG  ...
+$0276: $910F:     -> r16
+$0277: $BF0F:     r16 -> p$3F
+$0278: $911F:  F: -> r17 (-> r17)
+$0279: $910F:  F: -> r16 (-> r16)
+$027A: $9518:  F: RETI (reti)
+-----          V: _ccRadio_setDefault
+-----          L: 
+$027B: $931F:  F: r17 -> (r17 ->)
+               F: Z ->  ...
+$027C: $93EF:     r30 ->
+$027D: $93FF:     r31 ->
+$027E: $982A:  F: 0 -> p$05.2 (0 -> ccRadio_CSn)
+-----          L: 
+$027F: $991B:  C: if (p$03.3=0 then SKIP (ccRadio_SO = 1)
+$0280: $CFFE:  C: goto $27F (RJMP) (ccRadio_SO = 1)
+-----          L: 
+$0281: $E400:  F: $40 -> r16 (0+64 -> r16)
+$0282: $D054:  F: rcall $2D7 (_ccRadio_writeByte_)
+-----          L: 
+               F: 2*D_defaultRegSet -> Z  ...
+$0283: $E2EC:     $2C -> r30
+$0284: $E0F5:     $05 -> r31
+$0285: $E219:  F: $29 -> r17 (41 -> r17)
+-----          L: 
+$0286: $9104:  F: LPM[Z] -> r16 (LPM[Z] -> r16)
+$0287: $D04F:  F: rcall $2D7 (_ccRadio_writeByte_)
+$0288: $9632:  F: r30,r31 + $02 (Z + 2)
+               C: if (r17--) then goto $0286 ...
+$0289: $951A:     r17 --
+$028A: $F7D9:     if (Z=0) then goto $286
+-----          L: 
+$028B: $9A2A:  F: 1 -> p$05.2 (1 -> ccRadio_CSn)
+               F: -> Z  ...
+$028C: $91FF:     -> r31
+$028D: $91EF:     -> r30
+$028E: $911F:  F: -> r17 (-> r17)
+$028F: $9508:  F: RET (ret)
+-----          V: _ccRadio_strobe_
+-----          L: 
+$0290: $982A:  F: 0 -> p$05.2 (0 -> ccRadio_CSn)
+-----          L: 
+$0291: $991B:  C: if (p$03.3=0 then SKIP (ccRadio_SO = 1)
+$0292: $CFFE:  C: goto $291 (RJMP) (ccRadio_SO = 1)
+-----          L: 
+$0293: $D043:  F: rcall $2D7 (_ccRadio_writeByte_)
+-----          L: 
+$0294: $9A2A:  F: 1 -> p$05.2 (1 -> ccRadio_CSn)
+$0295: $9508:  F: RET (ret)
+-----          V: D_defaultRegSet
+$0296: $07 $00
+$0297: $2E $00
+$0298: $06 $00
+$0299: $47 $00
+$029A: $D3 $00
+$029B: $91 $00
+$029C: $10 $00
+$029D: $0C $00
+$029E: $44 $00
+$029F: $00 $00
+$02A0: $00 $00
+$02A1: $06 $00
+$02A2: $00 $00
+$02A3: $21 $00
+$02A4: $62 $00
+$02A5: $76 $00
+$02A6: $CA $00
+$02A7: $83 $00
+$02A8: $13 $00
+$02A9: $22 $00
+$02AA: $F8 $00
+$02AB: $35 $00
+$02AC: $07 $00
+$02AD: $3F $00
+$02AE: $18 $00
+$02AF: $16 $00
+$02B0: $6C $00
+$02B1: $43 $00
+$02B2: $40 $00
+$02B3: $91 $00
+$02B4: $87 $00
+$02B5: $6B $00
+$02B6: $FB $00
+$02B7: $56 $00
+$02B8: $10 $00
+$02B9: $E9 $00
+$02BA: $2A $00
+$02BB: $00 $00
+$02BC: $1F $00
+$02BD: $41 $00
+$02BE: $00 $00
+$02BF: $59 $00
+$02C0: $7F $00
+$02C1: $3F $00
+$02C2: $81 $00
+$02C3: $35 $00
+$02C4: $2E $00
+-----          V: _ccRadio_read_
+-----          L: 
+$02C5: $982A:  F: 0 -> p$05.2 (0 -> ccRadio_CSn)
+-----          L: 
+$02C6: $991B:  C: if (p$03.3=0 then SKIP (ccRadio_SO = 1)
+$02C7: $CFFE:  C: goto $2C6 (RJMP) (ccRadio_SO = 1)
+-----          L: 
+$02C8: $D00E:  F: rcall $2D7 (_ccRadio_writeByte_)
+-----          L: 
+$02C9: $E30D:  F: $3D -> r16 (SNOP -> r16)
+$02CA: $D00C:  F: rcall $2D7 (_ccRadio_writeByte_)
+$02CB: $9100:  F: [$0175] -> r16 (ccRadio_Status -> r16)
+$02CC: $0175:  
+-----          L: 
+$02CD: $9A2A:  F: 1 -> p$05.2 (1 -> ccRadio_CSn)
+$02CE: $9508:  F: RET (ret)
+-----          V: _ccRadio_write_
+-----          L: 
+$02CF: $982A:  F: 0 -> p$05.2 (0 -> ccRadio_CSn)
+-----          L: 
+$02D0: $991B:  C: if (p$03.3=0 then SKIP (ccRadio_SO = 1)
+$02D1: $CFFE:  C: goto $2D0 (RJMP) (ccRadio_SO = 1)
+-----          L: 
+$02D2: $D004:  F: rcall $2D7 (_ccRadio_writeByte_)
+-----          L: 
+$02D3: $2F01:  F: r17 -> r16 (r17 -> r16)
+$02D4: $D002:  F: rcall $2D7 (_ccRadio_writeByte_)
+-----          L: 
+$02D5: $9A2A:  F: 1 -> p$05.2 (1 -> ccRadio_CSn)
+$02D6: $9508:  F: RET (ret)
+-----          V: _ccRadio_writeByte_
+-----          L: 
+$02D7: $931F:  F: r17 -> (r17 ->)
+$02D8: $9408:  F: 1 -> .C (1 -> C)
+$02D9: $1F00:  F: << r16 < (<< r16 <)
+$02DA: $C001:  J: goto $2DC (RJMP)
+-----          L: 
+$02DB: $0F00:  F: << r16 (<< r16)
+-----          L: 
+$02DC: $F010:  C: if (C=1) then goto $2DF (C=1)
+$02DD: $982C:  F: 0 -> p$05.4 (0->ccRadio_SI)
+$02DE: $C001:  J: goto $2E0 (RJMP)
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\main.alp    ***********
+-----          L: 
+$02DF: $9A2C:  F: 1 -> p$05.4 (1->ccRadio_SI)
+-----          L: 
+$02E0: $9A29:  F: 1 -> p$05.1 (1 -> ccRadio_SCLK)
+$02E1: $0F11:  F: << r17 (<< r17)
+$02E2: $991B:  C: if (p$03.3=0 then SKIP (ccRadio_SO = 1)
+$02E3: $9513:  F: r17 ++ (r17++)
+$02E4: $9829:  F: 0 -> p$05.1 (0 -> ccRadio_SCLK)
+               C: if (r16 -= 128) then goto $02DB ...
+$02E5: $3800:     r16 = $80
+$02E6: $F7A1:     if (Z=0) then goto $2DB
+$02E7: $9310:  F: r17 -> [$0175] (r17 -> ccRadio_Status)
+$02E8: $0175:  
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\ccRadio.alg    ***********
+-----          L: 
+$02E9: $911F:  F: -> r17 (-> r17)
+$02EA: $9508:  F: RET (ret)
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\main.alp    ***********
+-----          V: Reset
+$02EB: $EF0F:  S: $FF -> r16 ($FF->r16)
+$02EC: $BF0D:  S: r16 -> p$3D (r16->p61)
+$02ED: $E008:  S: $08 -> r16 ($08->r16)
+$02EE: $BF0E:  S: r16 -> p$3E (r16->p62)
+-----          L: 
+               F: 100-1 -> r16:Word  ...
+$02EF: $E603:     $63 -> r16
+$02F0: $E010:     $00 -> r17
+$02F1: $DD42:  F: rcall $34 (_Wait_ms_)
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Wait.alg    ***********
+-----          L: 
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\main.alp    ***********
+-----          L: 
+               F: SRAM_Org -> Z  ...
+$02F2: $E0E0:     $00 -> r30
+$02F3: $E0F1:     $01 -> r31
+$02F4: $E000:  F: $00 -> r16 (0 -> r16)
+-----          L: 
+$02F5: $9301:  F: r16 -> [Z++] (r16 -> [Z++])
+               C: if (Z -= SRAM_Size) then goto $02F5 ...
+$02F6: $30E0:     r30 = $00
+$02F7: $E019:     $09 -> r17
+$02F8: $07F1:     r31 = r17=
+$02F9: $F7D9:     if (Z=0) then goto $2F5
+-----          L: 
+               F: 30 -> Z  ...
+$02FA: $E1EE:     $1E -> r30
+$02FB: $E0F0:     $00 -> r31
+-----          L: 
+$02FC: $95EA:  F: r30 -- (ZL --)
+$02FD: $8300:  F: r16 -> [Z] (r16 -> [Z])
+$02FE: $F7E9:  C: if (Z=0) then goto $2FC (-=)
+-----          L: 
+$02FF: $2733:  F: ^ r19 (^Flags)
+-----          L: 
+-----          L: 
+$0300: $DD53:  F: rcall $54 (_PWM_Init)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+$0301: $DDA5:  F: rcall $A7 (_UART_Init)
+-----          L: 
+$0302: $DE70:  F: rcall $173 (_STimer_Init)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+$0303: $DF27:  F: rcall $22B (_ccRadio_init)
+-----          L: 
+$0304: $9478:  F: 1 -> I (1 -> I)
+-----          L: 
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Programm.alg    ***********
+-----          L: 
+-----          L: 
+-----          L: 
+               F: "T" -> ccRadio_pacTx[0]  ...
+$0305: $E504:     $54 -> r16
+$0306: $9300:     r16 -> [$0155]
+$0307: $0155:  
+               F: "e" -> ccRadio_pacTx[1]  ...
+$0308: $E605:     $65 -> r16
+$0309: $9300:     r16 -> [$0156]
+$030A: $0156:  
+               F: "s" -> ccRadio_pacTx[2]  ...
+$030B: $E703:     $73 -> r16
+$030C: $9300:     r16 -> [$0157]
+$030D: $0157:  
+               F: "t" -> ccRadio_pacTx[3]  ...
+$030E: $E704:     $74 -> r16
+$030F: $9300:     r16 -> [$0158]
+$0310: $0158:  
+               F: "1" -> ccRadio_pacTx[4]  ...
+$0311: $E301:     $31 -> r16
+$0312: $9300:     r16 -> [$0159]
+$0313: $0159:  
+               F: "2" -> ccRadio_pacTx[5]  ...
+$0314: $E302:     $32 -> r16
+$0315: $9300:     r16 -> [$015A]
+$0316: $015A:  
+               F: "3" -> ccRadio_pacTx[6]  ...
+$0317: $E303:     $33 -> r16
+$0318: $9300:     r16 -> [$015B]
+$0319: $015B:  
+               F: "!" -> ccRadio_pacTx[7]  ...
+$031A: $E201:     $21 -> r16
+$031B: $9300:     r16 -> [$015C]
+$031C: $015C:  
+               F: "." -> ccRadio_pacTx[8]  ...
+$031D: $E20E:     $2E -> r16
+$031E: $9300:     r16 -> [$015D]
+$031F: $015D:  
+-----          L: 
+$0320: $DE6D:  F: rcall $18E (_print_string_)
+$0321: $53 $74 $61 $72 $74 $0D $0A $00
+-----          L: 
+$0325: $C080:  J: goto $3A6 (RJMP)
+-----          L: 
+$0326: $DECC:  F: rcall $1F3 (_ccRadio_writePac)
+-----          L: 
+-----          L: 
+$0327: $DE66:  F: rcall $18E (_print_string_)
+$0328: $0D $0D $42 $61 $73 $65 $0D $00
+$032C: $E305:  F: $35 -> r16 (MARCSTATE -> r16)
+$032D: $5400:  F: r16 - $40 (r16 + $C0)
+$032E: $DF96:  F: rcall $2C5 (_ccRadio_read_)
+               F: Z ->  ...
+$032F: $93EF:     r30 ->
+$0330: $93FF:     r31 ->
+               F: r16 -> Z  ...
+$0331: $2FE0:     r16 -> r30
+$0332: $E0F0:     $00 -> r31
+$0333: $DE78:  F: rcall $1AC (_print_HEX_)
+               F: -> Z  ...
+$0334: $91FF:     -> r31
+$0335: $91EF:     -> r30
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Print.alg    ***********
+-----          L: 
+$0336: $E30B:  F: $3B -> r16 (RXBYTES -> r16)
+$0337: $5400:  F: r16 - $40 (r16 + $C0)
+$0338: $DF8C:  F: rcall $2C5 (_ccRadio_read_)
+               F: Z ->  ...
+$0339: $93EF:     r30 ->
+$033A: $93FF:     r31 ->
+               F: r16 -> Z  ...
+$033B: $2FE0:     r16 -> r30
+$033C: $E0F0:     $00 -> r31
+$033D: $DE6E:  F: rcall $1AC (_print_HEX_)
+               F: -> Z  ...
+$033E: $91FF:     -> r31
+$033F: $91EF:     -> r30
+-----          L: 
+$0340: $DE4D:  F: rcall $18E (_print_string_)
+$0341: $0D $00
+$0342: $E30A:  F: $3A -> r16 (TXBYTES -> r16)
+$0343: $5400:  F: r16 - $40 (r16 + $C0)
+$0344: $DF80:  F: rcall $2C5 (_ccRadio_read_)
+               F: Z ->  ...
+$0345: $93EF:     r30 ->
+$0346: $93FF:     r31 ->
+               F: r16 -> Z  ...
+$0347: $2FE0:     r16 -> r30
+$0348: $E0F0:     $00 -> r31
+$0349: $DE62:  F: rcall $1AC (_print_HEX_)
+               F: -> Z  ...
+$034A: $91FF:     -> r31
+$034B: $91EF:     -> r30
+-----          L: 
+$034C: $DE41:  F: rcall $18E (_print_string_)
+$034D: $0D $00
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Programm.alg    ***********
+-----          L: 
+-----          L: 
+$034E: $DE3F:  F: rcall $18E (_print_string_)
+$034F: $0D $0D $53 $65 $6E $64 $0D $00
+               F: 100-1 -> r16:Word  ...
+$0353: $E603:     $63 -> r16
+$0354: $E010:     $00 -> r17
+$0355: $DCDE:  F: rcall $34 (_Wait_ms_)
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Wait.alg    ***********
+-----          L: 
+$0356: $E305:  F: $35 -> r16 (STX -> r16)
+$0357: $DF38:  F: rcall $290 (_ccRadio_strobe_)
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Programm.alg    ***********
+-----          L: 
+$0358: $E305:  F: $35 -> r16 (MARCSTATE -> r16)
+$0359: $5400:  F: r16 - $40 (r16 + $C0)
+$035A: $DF6A:  F: rcall $2C5 (_ccRadio_read_)
+               F: Z ->  ...
+$035B: $93EF:     r30 ->
+$035C: $93FF:     r31 ->
+               F: r16 -> Z  ...
+$035D: $2FE0:     r16 -> r30
+$035E: $E0F0:     $00 -> r31
+$035F: $DE4C:  F: rcall $1AC (_print_HEX_)
+               F: -> Z  ...
+$0360: $91FF:     -> r31
+$0361: $91EF:     -> r30
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Print.alg    ***********
+-----          L: 
+$0362: $DE2B:  F: rcall $18E (_print_string_)
+$0363: $0D $00
+$0364: $E30B:  F: $3B -> r16 (RXBYTES -> r16)
+$0365: $5400:  F: r16 - $40 (r16 + $C0)
+$0366: $DF5E:  F: rcall $2C5 (_ccRadio_read_)
+               F: Z ->  ...
+$0367: $93EF:     r30 ->
+$0368: $93FF:     r31 ->
+               F: r16 -> Z  ...
+$0369: $2FE0:     r16 -> r30
+$036A: $E0F0:     $00 -> r31
+$036B: $DE40:  F: rcall $1AC (_print_HEX_)
+               F: -> Z  ...
+$036C: $91FF:     -> r31
+$036D: $91EF:     -> r30
+-----          L: 
+$036E: $DE1F:  F: rcall $18E (_print_string_)
+$036F: $0D $00
+$0370: $E30A:  F: $3A -> r16 (TXBYTES -> r16)
+$0371: $5400:  F: r16 - $40 (r16 + $C0)
+$0372: $DF52:  F: rcall $2C5 (_ccRadio_read_)
+               F: Z ->  ...
+$0373: $93EF:     r30 ->
+$0374: $93FF:     r31 ->
+               F: r16 -> Z  ...
+$0375: $2FE0:     r16 -> r30
+$0376: $E0F0:     $00 -> r31
+$0377: $DE34:  F: rcall $1AC (_print_HEX_)
+               F: -> Z  ...
+$0378: $91FF:     -> r31
+$0379: $91EF:     -> r30
+-----          L: 
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Programm.alg    ***********
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+               F: 100-1 -> r16:Word  ...
+$037A: $E603:     $63 -> r16
+$037B: $E010:     $00 -> r17
+$037C: $DCB7:  F: rcall $34 (_Wait_ms_)
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Wait.alg    ***********
+-----          L: 
+$037D: $E305:  F: $35 -> r16 (MARCSTATE -> r16)
+$037E: $5400:  F: r16 - $40 (r16 + $C0)
+$037F: $DF45:  F: rcall $2C5 (_ccRadio_read_)
+               F: Z ->  ...
+$0380: $93EF:     r30 ->
+$0381: $93FF:     r31 ->
+               F: r16 -> Z  ...
+$0382: $2FE0:     r16 -> r30
+$0383: $E0F0:     $00 -> r31
+$0384: $DE27:  F: rcall $1AC (_print_HEX_)
+               F: -> Z  ...
+$0385: $91FF:     -> r31
+$0386: $91EF:     -> r30
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Print.alg    ***********
+-----          L: 
+$0387: $DE06:  F: rcall $18E (_print_string_)
+$0388: $0D $0D $53 $65 $6E $64 $5F $45 $6E $64 $0D $00
+$038E: $E30B:  F: $3B -> r16 (RXBYTES -> r16)
+$038F: $5400:  F: r16 - $40 (r16 + $C0)
+$0390: $DF34:  F: rcall $2C5 (_ccRadio_read_)
+               F: Z ->  ...
+$0391: $93EF:     r30 ->
+$0392: $93FF:     r31 ->
+               F: r16 -> Z  ...
+$0393: $2FE0:     r16 -> r30
+$0394: $E0F0:     $00 -> r31
+$0395: $DE16:  F: rcall $1AC (_print_HEX_)
+               F: -> Z  ...
+$0396: $91FF:     -> r31
+$0397: $91EF:     -> r30
+-----          L: 
+$0398: $DDF5:  F: rcall $18E (_print_string_)
+$0399: $0D $00
+$039A: $E30A:  F: $3A -> r16 (TXBYTES -> r16)
+$039B: $5400:  F: r16 - $40 (r16 + $C0)
+$039C: $DF28:  F: rcall $2C5 (_ccRadio_read_)
+               F: Z ->  ...
+$039D: $93EF:     r30 ->
+$039E: $93FF:     r31 ->
+               F: r16 -> Z  ...
+$039F: $2FE0:     r16 -> r30
+$03A0: $E0F0:     $00 -> r31
+$03A1: $DE0A:  F: rcall $1AC (_print_HEX_)
+               F: -> Z  ...
+$03A2: $91FF:     -> r31
+$03A3: $91EF:     -> r30
+-----          L: 
+$03A4: $DDE9:  F: rcall $18E (_print_string_)
+$03A5: $0D $00
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\Programm.alg    ***********
+-----          L: 
+*********   D:\work\CC1101-Module\testCC1101\ab_project_source\main.alp    ***********
+-----          L: 
+$03A6: $CFFF:  J: goto $3A6 (RJMP)
